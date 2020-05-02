@@ -142,7 +142,7 @@ public class ShulkerRespawner  extends JavaPlugin implements Listener{
         	if(debug){logDebug("biome=" + entity.getWorld().getEnvironment().toString());}
         	if(entity.getWorld().getEnvironment() == Environment.THE_END){
         		if(debug){logDebug("block=" + entity.getLocation().getBlock().getType().toString());}
-        		if(entity.getLocation().subtract(0, 1, 0).getBlock().getType().toString().contains("PURPUR")||entity.getLocation().getBlock().getType().toString().contains("PURPUR")){
+        		if(entity.getLocation().subtract(0, 1, 0).getBlock().getType().toString().contains("PURPUR","Stone Bricks","End Stone Bricks","Planks")||entity.getLocation().getBlock().getType().toString().contains("PURPUR","Stone Bricks","End Stone Bricks","Planks"){
         			Location location = entity.getLocation();
         			World world = entity.getWorld();
         			e.setCancelled(true);
@@ -194,7 +194,7 @@ public class ShulkerRespawner  extends JavaPlugin implements Listener{
 	            }
 	            /** Command code */
 		    	if(!args[1].equalsIgnoreCase("true") & !args[1].equalsIgnoreCase("false")){
-					sender.sendMessage(ChatColor.YELLOW + this.getName() + " §c" + lang.get("boolean." + daLang + "") + ": /SR DEBUG True/False");
+					sender.sendMessage(ChatColor.YELLOW + this.getName() + " Â§c" + lang.get("boolean." + daLang + "") + ": /SR DEBUG True/False");
 		    	}else if(args[1].contains("true") || args[1].contains("false")){
 					//sender.sendMessage(ChatColor.YELLOW + this.getName() + " " + " " + args[1]);
 					if(args[1].contains("false")){
